@@ -1,11 +1,13 @@
-import {multer} from multer
+import multer  from  'multer';
+
+// import pkg from 'multer';
 
 const storage =multer.diskStorage({
     destination:function(req,file,cb){
         cb(null,"./public/temp")
     },
     filename:function(req,file,cb){
-        cb(null,file.original)
+        cb(null,file.originalname)
     }
 })
 
